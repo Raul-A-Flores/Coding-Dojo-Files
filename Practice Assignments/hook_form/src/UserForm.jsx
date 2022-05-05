@@ -10,16 +10,7 @@ const UserForm = (props) => {
     const [password, setPassword] = useState("");  
     const [confirmPassword, setconfirmPassword] = useState("");  
 
-    const [titleError, setTitleError] = useState("");
 
-    const handleTitle = (e) => {
-        setfirstName(e.target.value);
-        if(firstName< 1) {
-            setfirstName("First Name is required!");
-        } else if(e.target.value.length < 3) {
-            setTitleError("First Name must be 3 characters or longer!");
-        }
-    }
     
     const createUser = (e) => {
         e.preventDefault();
@@ -34,11 +25,7 @@ const UserForm = (props) => {
                 <div className='form-group'>
                     <label>First Name: </label> 
                     <input type="text" onChange={ (e) => setfirstName(e.target.value) } />
-                    {
-                    titleError ?
-                    <p style={{color:'red'}}>{ titleError }</p> :
-                    ''
-                }
+                    
                 </div>
                 <div className='form-group'>
                     <label>Last Name: </label> 
@@ -80,18 +67,7 @@ const UserForm = (props) => {
                     { confirmPassword}
                 </div>
         </div>
-        <form onSubmit={ (e) => e.preventDefault() }>
-            <div>
-                <label>Title: </label>
-                <input type="text" onChange={ handleTitle } />
-                {
-                    titleError ?
-                    <p style={{color:'red'}}>{ titleError }</p> :
-                    ''
-                }
-            </div>
-            <input type="submit" value="Create Movie" />
-        </form>
+        
     </div>
     );
 };
