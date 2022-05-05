@@ -51,20 +51,20 @@ const UserForm = (props) => {
                 <h3>Your Form Data:</h3>
                 <div className='form-group'>
 
-                    { firstName}
+                  First Name:  { firstName}
                 </div>
                 <div className='form-group'>
-                    { lastName}
+                   Last Name: { lastName}
                 </div>
                 <div className='form-group'>
-                    { email}
+                   Email: { email}
                 </div>
                 <div className='form-group'>
-                    { password}
+                   Password: { password}
                 </div>
                 <div className='form-group'>
 
-                    { confirmPassword}
+                   Confirm Password: { confirmPassword}
                 </div>
         </div>
         
