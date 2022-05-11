@@ -8,17 +8,18 @@ const Pokemon = () => {
 
     const getPokemon = ()=> {
            console.log("Pokemon")
-           axios.get('https://pokeapi.co/api/v2/pokemon?limit=807').then(response=>{
+           axios.get('https://pokeapi.co/api/v2/pokemon?limit=807')
+           .then(response=>{
           
             console.log(response);
-            setPoke({
-                pokemon:response.results
-            })
+            setPoke(response.data.results);
             
-})
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+};
           
-       };
-       
 
        
     return(
@@ -26,10 +27,17 @@ const Pokemon = () => {
         
         <div>
             <button onClick={getPokemon}>Fetch</button>
-                <h2>{poke.pokemon ? poke.pokemon.map((item,index) =>{
-                    return(<div key={index}>{item.name}</div>)
-                }):null}</h2>
-        
+            <h1>Name of all Pokemon: </h1>
+                {
+                    poke.map((pokemon,index)=>{
+                        return(
+                            <div key={ index }>
+                            
+                            <h2>{pokemon.name}</h2>
+                            </div>
+                        )
+                    })
+                }
         </div>
      );
 }
