@@ -32,9 +32,6 @@ const createCompany =() =>{
             country: faker.address.country()
         }
 
-       
-        
-        
     };
     return newCompany;
 }
@@ -60,7 +57,7 @@ app.get("/users/new/company", (req, res) => {
     console.log(newPerson, newCompany);
     res.json({ "result": {
         "New User": newPerson,
-        "New Company": newCompany }})
+        "New Company": newCompany }}),
         ;
 
 });
