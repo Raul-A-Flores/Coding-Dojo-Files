@@ -13,11 +13,15 @@ const Todo = () =>{
 
     };
 
-    const handleDelete =(i) =>{
-        
+    const handleDelete =(deleteItem) =>{
+        const filteredTodos = todosList.filter((todos, i) =>{
+            return i !== deleteItem;
 
-        
+        })
+        setTodoList(filteredTodos);
     }
+
+
     return(
         <div className='container'>
 
@@ -40,11 +44,13 @@ const Todo = () =>{
 
 
             {
-            todosList.map((todoList,i) => {
+            todosList.map((todoItem,i) => {
                 return(
                     <div key ={i}>
-                        <span>{todoList}</span>
-                        <button className='btn btn-dark'>Delete</button>
+                        <span>{todoItem}</span>
+                        <button className='btn btn-dark' onClick={()=>{
+                            handleDelete(todoItem)}}
+                            >Delete</button>
                     </div>
                 );
                 })
