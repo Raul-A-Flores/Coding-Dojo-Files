@@ -1,24 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import ProductForm from './components/ProductForm';
+import {
+  BrowserRouter,
+  Link,
+  Route,
+  Switch
+} from 'react-router-dom'
+import OneProudct from './components/OneProudct';
+import EditProduct from './components/EditProduct';
+import {useState} from 'react';
 
 function App() {
+  
+  const [newProductToggle, setNewProductToggle] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+      <Link to="/">Home</Link>
+      <Switch>
+        <Route exact path="/">
+          <ProductForm newProductToggle= {newProductToggle} setNewProductToggle={setNewProductToggle}/>
+        </Route>
+        <Route exact path="/Products/:id">
+          <OneProudct/>
+        </Route>
+        <Route exact path="/:id/edit">
+          <EditProduct/>
+        </Route>
+
+          <ProductForm/>
+      </Switch>
+        
+      </div>
+    </BrowserRouter>
   );
 }
 
