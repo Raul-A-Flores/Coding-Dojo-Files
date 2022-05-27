@@ -3,6 +3,7 @@ You are at a company that does not have a great front end for its website, but t
 
 Take the following HTML and update all functions to arrow functions.
 
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,6 +55,8 @@ Take the following HTML and update all functions to arrow functions.
     </script>
 </body>
 </html>
+
+```
 copy
 Update all methods to become Arrow functions
 
