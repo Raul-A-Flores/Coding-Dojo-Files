@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Jokes API
+To solidify what we've read about mongoose commands and express, lets create a new express project from scratch called "Jokes."
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](JokeAPI_(2).png)
 
-## Available Scripts
+![](Screenshot_from_2020-01-09_13-19-59.png)
 
-In the project directory, you can run:
+* [ ] Create a project folder named "Jokes"
 
-### `npm start`
+* [ ] within "Jokes" create a modularized folder structure (server ==> controllers, routes, models, config, server.js)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [ ] initialize a package json file using npm
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* [ ] install express and mongoose
 
-### `npm test`
+* [ ] create a mongoose.config.js file and setup your mongoose.connect function
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [ ] create a jokes.model.js, jokes.controller.js, and a jokes.routes.js in the applicable folders
 
-### `npm run build`
+* [ ] in the jokes.model file create a JokeSchema and export the mongoose.model("joke", JokeSchema)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [ ] in the jokes.controller import your model from the models file
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [ ] Export a function to get all jokes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* [ ] Export a function to get a single joke
 
-### `npm run eject`
+* [ ] Export a function to create a joke
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* [ ] Export a function to update a joke
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Export a function to delete a joke
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+in the jokes.routes file: import * from your controller file and add an express route for every route listed in the wireframe
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+In your server.js file: setup express, import your joke routes, and run your server
 
-## Learn More
+Use Postman to create new jokes and use the browser to view them
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Use Postman to perform the POST DELETE and PUT operations and use the browser to GET them
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
